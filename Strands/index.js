@@ -30,9 +30,11 @@ const puppeteer = require('puppeteer');
 
     await page.goto('https://nytimes.com/games/strands');
 
+    await page.setViewport({ width: 1080, height: 1024 });
+
     const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
 
-    await delay(1000);
+    await delay(500);
 
     try {
         await page.locator('.Feo8La_playButton').click();
@@ -40,7 +42,9 @@ const puppeteer = require('puppeteer');
         console.error('Failed to select the play button: ', err);
     }
 
-    await page.setViewport({ width: 1080, height: 1024 });
+    await delay(500);
+
+    await page.locator('.ygtU9G_closeX').click();
     await page.waitForSelector('.pRjvKq_item');
 
     async function getLetters() {
@@ -157,7 +161,7 @@ const puppeteer = require('puppeteer');
     console.timeEnd('Total Execution Time');
 
     // Comment the line below out if you don't care about seeing the results
-    await delay(5000);
+    await delay(2000);
 
     await browser.close();
 })();
