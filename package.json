@@ -1,0 +1,16 @@
+{
+  "name": "nyt_games",
+  "version": "1.0.0",
+  "description": "An automated way to win some select NYT games",
+  "main": "index.js",
+  "scripts": {
+    "connections": "cd Connections && node index.js",
+    "strands": "cd Strands && node index.js",
+    "wordle": "cd Wordle && node index.js"
+  },
+  "author": "Dylan Mason",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}
